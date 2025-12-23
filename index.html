@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary SEO Meta Tags -->
-    <title>Easy Data | أداة تحليل البيانات بالذكاء الاصطناعي - AutoML مجاني</title>
+    <title>Easy Data | AI-Powered Data Analysis & AutoML Platform</title>
     <meta name="description"
-        content="أداة تحليل بيانات مجانية بالذكاء الاصطناعي. تنظيف البيانات، بناء نماذج Machine Learning، تقارير Excel و Power BI تلقائية. بديل DataRobot المجاني. Free AutoML tool for data analysis.">
+        content="Free AI-powered data analysis tool. Automatic data cleaning, Machine Learning model building, Excel & Power BI reports. Free DataRobot alternative. AutoML made easy.">
     <meta name="keywords"
-        content="تحليل البيانات, data analysis, machine learning, تعلم الآلة, AutoML, ذكاء اصطناعي, AI, تنظيف البيانات, data cleaning, Excel dashboard, Power BI, تنبؤات, predictions, free data science tool, أداة مجانية, data scientist, علم البيانات">
+        content="data analysis, machine learning, AutoML, AI, artificial intelligence, data cleaning, Excel dashboard, Power BI, predictions, free data science tool, data scientist, automated ML">
     <meta name="author" content="Easy Data">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="Arabic, English">
+    <meta name="language" content="English, Arabic">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://easydata.ai/">
-    <meta property="og:title" content="Easy Data | تحليل البيانات بالذكاء الاصطناعي">
+    <meta property="og:url" content="https://geteasydata.github.io/">
+    <meta property="og:title" content="Easy Data | AI-Powered Data Analysis Platform">
     <meta property="og:description"
-        content="حوّل بياناتك إلى قرارات ذكية. أداة AutoML مجانية لتنظيف البيانات وبناء النماذج التنبؤية.">
-    <meta property="og:image" content="https://easydata.ai/og-image.png">
-    <meta property="og:locale" content="ar_SA">
-    <meta property="og:locale:alternate" content="en_US">
+        content="Transform your data into smart decisions. Free AutoML tool for data cleaning and building predictive models.">
+    <meta property="og:image" content="https://geteasydata.github.io/og-image.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ar_SA">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://easydata.ai/">
-    <meta property="twitter:title" content="Easy Data | تحليل البيانات بالذكاء الاصطناعي">
-    <meta property="twitter:description" content="أداة AutoML مجانية لتحليل البيانات وبناء نماذج Machine Learning">
+    <meta property="twitter:url" content="https://geteasydata.github.io/">
+    <meta property="twitter:title" content="Easy Data | AI-Powered Data Analysis Platform">
+    <meta property="twitter:description"
+        content="Free AutoML tool for data analysis and building Machine Learning models">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://easydata.ai/">
+    <link rel="canonical" href="https://geteasydata.github.io/">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,18 +51,18 @@
         "name": "Easy Data",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
-        "description": "أداة تحليل بيانات بالذكاء الاصطناعي. AutoML لتنظيف البيانات وبناء نماذج Machine Learning",
+        "description": "AI-powered data analysis tool. AutoML for data cleaning and building Machine Learning models",
         "offers": {
             "@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
         },
         "featureList": [
-            "تحليل البيانات التلقائي",
-            "تنظيف البيانات",
+            "Automatic Data Analysis",
+            "Data Cleaning",
             "AutoML",
             "Machine Learning",
-            "تقارير Excel",
+            "Excel Reports",
             "Power BI Export",
             "Arabic and English support"
         ]
@@ -78,12 +79,19 @@
                 <span class="logo-text">Easy Data</span>
             </div>
             <div class="nav-links">
-                <a href="#features">الميزات</a>
-                <a href="#how-it-works">كيف يعمل</a>
-                <a href="#pricing">الأسعار</a>
-                <a href="#faq">أسئلة شائعة</a>
+                <a href="#features" data-i18n="nav.features">Features</a>
+                <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
 
-                <a href="http://localhost:8501" target="_blank" class="nav-btn-primary">ابدأ مجاناً</a>
+                <!-- Language Switcher -->
+                <button class="lang-switcher" id="langSwitcher" onclick="toggleLanguage()">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" data-i18n="lang.switch">العربية</span>
+                </button>
+
+                <a href="http://localhost:8501" target="_blank" class="nav-btn-primary" data-i18n="nav.startFree">Start
+                    Free</a>
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span>
@@ -104,18 +112,20 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="badge-icon">🚀</span>
-                <span>مدعوم بالذكاء الاصطناعي المتقدم</span>
+                <span data-i18n="hero.badge">Powered by Advanced AI</span>
             </div>
             <h1 class="hero-title">
-                حوّل بياناتك إلى <span class="gradient-text">قرارات ذكية</span> في ثوانٍ
+                <span data-i18n="hero.titlePart1">Transform Your Data Into</span> <span class="gradient-text"
+                    data-i18n="hero.titleHighlight">Smart Decisions</span> <span data-i18n="hero.titlePart2">in
+                    Seconds</span>
             </h1>
-            <p class="hero-subtitle">
-                ذكاء اصطناعي يساعدك على فهم بياناتك واتخاذ قرارات أفضل.
-                ارفع ملفك واحصل على تحليلات تلقائية، تنبؤات ذكية، وتقارير جاهزة للتحميل.
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                AI that helps you understand your data and make better decisions.
+                Upload your file and get automatic analysis, smart predictions, and downloadable reports.
             </p>
             <div class="hero-cta">
                 <a href="http://localhost:8501" target="_blank" class="btn-primary">
-                    <span>ابدأ التحليل مجاناً</span>
+                    <span data-i18n="hero.ctaPrimary">Start Analysis Free</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
@@ -125,23 +135,23 @@
                         <circle cx="12" cy="12" r="10" />
                         <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
                     </svg>
-                    <span>شاهد كيف يعمل</span>
+                    <span data-i18n="hero.ctaSecondary">See How It Works</span>
                 </a>
             </div>
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-value">3</span>
-                    <span class="stat-label">محركات ذكاء اصطناعي</span>
+                    <span class="stat-label" data-i18n="hero.stat1">AI Engines</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <span class="stat-value">5+</span>
-                    <span class="stat-label">صيغ تقارير</span>
+                    <span class="stat-label" data-i18n="hero.stat2">Report Formats</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
-                    <span class="stat-value">دقائق</span>
-                    <span class="stat-label">من الرفع للنتائج</span>
+                    <span class="stat-value" data-i18n="hero.stat3Value">Minutes</span>
+                    <span class="stat-label" data-i18n="hero.stat3">From Upload to Results</span>
                 </div>
             </div>
         </div>
@@ -177,7 +187,7 @@
     <!-- Trusted By Section -->
     <section class="trusted-section">
         <div class="container">
-            <p class="trusted-text">مصمم لخدمة</p>
+            <p class="trusted-text" data-i18n="trusted.text">Designed for</p>
             <div class="trusted-logos">
                 <div class="logo-placeholder">Data Teams</div>
                 <div class="logo-placeholder">Analysts</div>
@@ -192,9 +202,11 @@
     <section class="features-section" id="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">الميزات</span>
-                <h2 class="section-title">كل ما تحتاجه في <span class="gradient-text">منصة واحدة</span></h2>
-                <p class="section-subtitle">أدوات تحليل ذكية تساعدك على فهم بياناتك بشكل أفضل وأسرع</p>
+                <span class="section-badge" data-i18n="features.badge">Features</span>
+                <h2 class="section-title"><span data-i18n="features.titlePart1">Everything You Need in</span> <span
+                        class="gradient-text" data-i18n="features.titleHighlight">One Platform</span></h2>
+                <p class="section-subtitle" data-i18n="features.subtitle">Smart analysis tools that help you understand
+                    your data better and faster</p>
             </div>
 
             <div class="features-grid">
@@ -202,9 +214,9 @@
                     <div class="feature-icon-wrapper">
                         <span class="feature-icon">🧠</span>
                     </div>
-                    <h3>نظام تحقق ذكي</h3>
-                    <p>يفحص بياناتك قبل التحليل، يكتشف المشاكل المحتملة، ويعطيك توصيات لتحسين جودة البيانات قبل بناء
-                        النماذج.</p>
+                    <h3 data-i18n="features.validation.title">Smart Validation System</h3>
+                    <p data-i18n="features.validation.desc">Examines your data before analysis, detects potential
+                        problems, and gives you recommendations to improve data quality before building models.</p>
                     <div class="feature-tags">
                         <span class="tag">Problem Reframing</span>
                         <span class="tag">Data Skepticism</span>
@@ -216,40 +228,45 @@
                     <div class="feature-icon-wrapper purple">
                         <span class="feature-icon">🤖</span>
                     </div>
-                    <h3>تحليل تلقائي بالكامل</h3>
-                    <p>AutoML يختار أفضل النماذج ويحسّنها تلقائياً. لا تحتاج لكتابة سطر كود واحد.</p>
+                    <h3 data-i18n="features.automl.title">Fully Automatic Analysis</h3>
+                    <p data-i18n="features.automl.desc">AutoML selects and optimizes the best models automatically. No
+                        coding required.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon-wrapper green">
                         <span class="feature-icon">🔮</span>
                     </div>
-                    <h3>نماذج تنبؤية</h3>
-                    <p>بناء نماذج تعلم آلي مع تنظيف وتحسين تلقائي للبيانات قبل التدريب.</p>
+                    <h3 data-i18n="features.predictive.title">Predictive Models</h3>
+                    <p data-i18n="features.predictive.desc">Build machine learning models with automatic data cleaning
+                        and optimization before training.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon-wrapper orange">
                         <span class="feature-icon">📊</span>
                     </div>
-                    <h3>تقارير احترافية</h3>
-                    <p>Excel، Power BI، PDF، Word، وحتى Jupyter Notebook جاهزة للتحميل فوراً.</p>
+                    <h3 data-i18n="features.reports.title">Professional Reports</h3>
+                    <p data-i18n="features.reports.desc">Excel, Power BI, PDF, Word, and even Jupyter Notebook ready for
+                        instant download.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon-wrapper pink">
                         <span class="feature-icon">🌍</span>
                     </div>
-                    <h3>عربي وإنجليزي</h3>
-                    <p>دعم كامل للغة العربية والإنجليزية. التقارير تخرج بلغتك المفضلة.</p>
+                    <h3 data-i18n="features.bilingual.title">Arabic & English</h3>
+                    <p data-i18n="features.bilingual.desc">Full support for Arabic and English. Reports are generated in
+                        your preferred language.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon-wrapper cyan">
                         <span class="feature-icon">⚡</span>
                     </div>
-                    <h3>سريع جداً</h3>
-                    <p>من رفع الملف إلى النتائج في دقائق معدودة. لا انتظار، لا تعقيد.</p>
+                    <h3 data-i18n="features.fast.title">Lightning Fast</h3>
+                    <p data-i18n="features.fast.desc">From file upload to results in minutes. No waiting, no complexity.
+                    </p>
                 </div>
             </div>
         </div>
@@ -259,9 +276,12 @@
     <section class="how-section" id="how-it-works">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">كيف يعمل</span>
-                <h2 class="section-title">ثلاث خطوات <span class="gradient-text">بسيطة</span></h2>
-                <p class="section-subtitle">لا تحتاج لخبرة تقنية. فقط ارفع بياناتك ودع الذكاء الاصطناعي يعمل</p>
+                <span class="section-badge" data-i18n="howItWorks.badge">How It Works</span>
+                <h2 class="section-title"><span data-i18n="howItWorks.titlePart1">Three</span> <span
+                        class="gradient-text" data-i18n="howItWorks.titleHighlight">Simple</span> <span
+                        data-i18n="howItWorks.titlePart2">Steps</span></h2>
+                <p class="section-subtitle" data-i18n="howItWorks.subtitle">No technical experience needed. Just upload
+                    your data and let the AI do the work</p>
             </div>
 
             <div class="steps-container">
@@ -269,14 +289,14 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <div class="step-icon">📤</div>
-                        <h3>ارفع بياناتك</h3>
-                        <p>ملف Excel، CSV، أو حتى اتصال مباشر بقاعدة بيانات SQL</p>
+                        <h3 data-i18n="howItWorks.step1.title">Upload Your Data</h3>
+                        <p data-i18n="howItWorks.step1.desc">Excel, CSV, or even direct SQL database connection</p>
                     </div>
                 </div>
 
                 <div class="step-connector">
                     <svg width="60" height="20" viewBox="0 0 60 20">
-                        <path d="M60 10 L10 10 M15 5 L5 10 L15 15" stroke="currentColor" stroke-width="2" fill="none" />
+                        <path d="M0 10 L50 10 M45 5 L55 10 L45 15" stroke="currentColor" stroke-width="2" fill="none" />
                     </svg>
                 </div>
 
@@ -284,14 +304,15 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <div class="step-icon">🧠</div>
-                        <h3>الذكاء يعمل</h3>
-                        <p>3 محركات AI تحلل، تنظف، وتبني أفضل النماذج تلقائياً</p>
+                        <h3 data-i18n="howItWorks.step2.title">AI Does the Work</h3>
+                        <p data-i18n="howItWorks.step2.desc">3 AI engines analyze, clean, and build the best models
+                            automatically</p>
                     </div>
                 </div>
 
                 <div class="step-connector">
                     <svg width="60" height="20" viewBox="0 0 60 20">
-                        <path d="M60 10 L10 10 M15 5 L5 10 L15 15" stroke="currentColor" stroke-width="2" fill="none" />
+                        <path d="M0 10 L50 10 M45 5 L55 10 L45 15" stroke="currentColor" stroke-width="2" fill="none" />
                     </svg>
                 </div>
 
@@ -299,8 +320,9 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <div class="step-icon">📥</div>
-                        <h3>حمّل نتائجك</h3>
-                        <p>تقارير، رسوم بيانية، ونماذج جاهزة للاستخدام في عملك</p>
+                        <h3 data-i18n="howItWorks.step3.title">Download Results</h3>
+                        <p data-i18n="howItWorks.step3.desc">Reports, charts, and models ready to use in your business
+                        </p>
                     </div>
                 </div>
             </div>
@@ -312,22 +334,26 @@
         <div class="container">
             <div class="ai-content">
                 <div class="ai-text">
-                    <span class="section-badge">التقنية المستخدمة</span>
-                    <h2 class="section-title">ثلاثة نماذج <span class="gradient-text">تعمل معاً</span></h2>
-                    <p>نستخدم عدة نماذج ذكاء اصطناعي للحصول على نتائج أكثر توازناً. النظام يجمع بين آرائها لتقليل
-                        احتمالية الأخطاء.</p>
+                    <span class="section-badge" data-i18n="ai.badge">Technology Used</span>
+                    <h2 class="section-title"><span data-i18n="ai.titlePart1">Three Models</span> <span
+                            class="gradient-text" data-i18n="ai.titleHighlight">Working Together</span></h2>
+                    <p data-i18n="ai.desc">We use multiple AI models to get more balanced results. The system combines
+                        their opinions to reduce the chance of errors.</p>
                     <ul class="ai-list">
                         <li>
                             <span class="ai-check">✅</span>
-                            <span><strong>Gemini Pro</strong> - للتحليل العميق والفهم السياقي</span>
+                            <span><strong>Gemini Pro</strong> - <span data-i18n="ai.gemini">For deep analysis and
+                                    contextual understanding</span></span>
                         </li>
                         <li>
                             <span class="ai-check">✅</span>
-                            <span><strong>Llama 3 (Groq)</strong> - للسرعة الفائقة والاستجابة الفورية</span>
+                            <span><strong>Llama 3 (Groq)</strong> - <span data-i18n="ai.llama">For blazing speed and
+                                    instant response</span></span>
                         </li>
                         <li>
                             <span class="ai-check">✅</span>
-                            <span><strong>DeepSeek</strong> - للتفكير المنطقي والرياضي</span>
+                            <span><strong>DeepSeek</strong> - <span data-i18n="ai.deepseek">For logical and mathematical
+                                    reasoning</span></span>
                         </li>
                     </ul>
                 </div>
@@ -353,65 +379,76 @@
     <section class="pricing-section" id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">الأسعار</span>
-                <h2 class="section-title">خطط تناسب <span class="gradient-text">الجميع</span></h2>
-                <p class="section-subtitle">ابدأ مجاناً وقم بالترقية حسب احتياجاتك</p>
+                <span class="section-badge" data-i18n="pricing.badge">Pricing</span>
+                <h2 class="section-title"><span data-i18n="pricing.titlePart1">Plans for</span> <span
+                        class="gradient-text" data-i18n="pricing.titleHighlight">Everyone</span></h2>
+                <p class="section-subtitle" data-i18n="pricing.subtitle">Start free and upgrade as you need</p>
             </div>
 
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>مجاني</h3>
+                        <h3 data-i18n="pricing.free.title">Free</h3>
                         <div class="pricing-price">
                             <span class="price-amount">$0</span>
-                            <span class="price-period">/شهرياً</span>
+                            <span class="price-period" data-i18n="pricing.period">/month</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="check">✓</span> 3 تحليلات شهرياً</li>
-                        <li><span class="check">✓</span> ملفات حتى 1MB</li>
-                        <li><span class="check">✓</span> تقارير Excel فقط</li>
-                        <li><span class="check">✓</span> دعم المجتمع</li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.free.f1">3 analyses per month</span>
+                        </li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.free.f2">Files up to 1MB</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.free.f3">Excel reports only</span>
+                        </li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.free.f4">Community support</span></li>
                     </ul>
-                    <a href="http://localhost:8501" target="_blank" class="pricing-btn">ابدأ مجاناً</a>
+                    <a href="http://localhost:8501" target="_blank" class="pricing-btn"
+                        data-i18n="pricing.free.cta">Start Free</a>
                 </div>
 
                 <div class="pricing-card popular">
-                    <div class="popular-badge">الأكثر شعبية</div>
+                    <div class="popular-badge" data-i18n="pricing.pro.popular">Most Popular</div>
                     <div class="pricing-header">
-                        <h3>احترافي</h3>
+                        <h3 data-i18n="pricing.pro.title">Professional</h3>
                         <div class="pricing-price">
                             <span class="price-amount">$29</span>
-                            <span class="price-period">/شهرياً</span>
+                            <span class="price-period" data-i18n="pricing.period">/month</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="check">✓</span> تحليلات غير محدودة</li>
-                        <li><span class="check">✓</span> ملفات حتى 100MB</li>
-                        <li><span class="check">✓</span> كل أنواع التقارير</li>
-                        <li><span class="check">✓</span> Power BI Export</li>
-                        <li><span class="check">✓</span> دعم بالبريد الإلكتروني</li>
-                        <li><span class="check">✓</span> API Access</li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f1">Unlimited analyses</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f2">Files up to 100MB</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f3">All report types</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f4">Power BI Export</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f5">Email support</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.pro.f6">API Access</span></li>
                     </ul>
-                    <a href="http://localhost:8501" target="_blank" class="pricing-btn primary">ابدأ الآن</a>
+                    <a href="http://localhost:8501" target="_blank" class="pricing-btn primary"
+                        data-i18n="pricing.pro.cta">Get Started</a>
                 </div>
 
                 <div class="pricing-card">
                     <div class="pricing-header">
-                        <h3>مؤسسات</h3>
+                        <h3 data-i18n="pricing.enterprise.title">Enterprise</h3>
                         <div class="pricing-price">
-                            <span class="price-amount">تواصل معنا</span>
+                            <span class="price-amount" data-i18n="pricing.enterprise.price">Contact Us</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="check">✓</span> كل مميزات الاحترافي</li>
-                        <li><span class="check">✓</span> بيانات غير محدودة</li>
-                        <li><span class="check">✓</span> تكامل مخصص</li>
-                        <li><span class="check">✓</span> تدريب الفريق</li>
-                        <li><span class="check">✓</span> دعم مخصص 24/7</li>
-                        <li><span class="check">✓</span> SLA مضمون</li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f1">All Professional
+                                features</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f2">Unlimited data</span>
+                        </li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f3">Custom
+                                integration</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f4">Team training</span>
+                        </li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f5">24/7 dedicated
+                                support</span></li>
+                        <li><span class="check">✓</span> <span data-i18n="pricing.enterprise.f6">Guaranteed SLA</span>
+                        </li>
                     </ul>
-                    <a href="#contact" class="pricing-btn">تواصل معنا</a>
+                    <a href="#contact" class="pricing-btn" data-i18n="pricing.enterprise.cta">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -421,34 +458,41 @@
     <section class="comparison-section" id="comparison">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">لماذا Easy Data؟</span>
-                <h2 class="section-title">قبل وبعد <span class="gradient-text">استخدام الأداة</span></h2>
-                <p class="section-subtitle">شاهد الفرق في سير العمل</p>
+                <span class="section-badge" data-i18n="comparison.badge">Why Easy Data?</span>
+                <h2 class="section-title"><span data-i18n="comparison.titlePart1">Before and After</span> <span
+                        class="gradient-text" data-i18n="comparison.titleHighlight">Using the Tool</span></h2>
+                <p class="section-subtitle" data-i18n="comparison.subtitle">See the difference in your workflow</p>
             </div>
 
             <div class="comparison-grid">
                 <div class="comparison-card before">
                     <div class="comparison-header">
                         <span class="comparison-icon">😓</span>
-                        <h3>الطريقة التقليدية</h3>
+                        <h3 data-i18n="comparison.before.title">Traditional Way</h3>
                     </div>
                     <ul class="comparison-list">
-                        <li><span class="x-mark">✗</span> تنظيف البيانات يدوياً (ساعات)</li>
-                        <li><span class="x-mark">✗</span> كتابة كود Python معقد</li>
-                        <li><span class="x-mark">✗</span> تجربة عشرات النماذج يدوياً</li>
-                        <li><span class="x-mark">✗</span> إنشاء التقارير من الصفر</li>
-                        <li><span class="x-mark">✗</span> يحتاج خبرة تقنية عالية</li>
-                        <li><span class="x-mark">✗</span> وقت طويل للحصول على نتائج</li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l1">Manual data cleaning
+                                (hours)</span></li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l2">Writing complex Python
+                                code</span></li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l3">Testing dozens of
+                                models manually</span></li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l4">Creating reports from
+                                scratch</span></li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l5">Requires high technical
+                                expertise</span></li>
+                        <li><span class="x-mark">✗</span> <span data-i18n="comparison.before.l6">Long time to get
+                                results</span></li>
                     </ul>
                     <div class="comparison-time">
-                        <span class="time-label">الوقت المتوقع:</span>
-                        <span class="time-value">أيام إلى أسابيع</span>
+                        <span class="time-label" data-i18n="comparison.timeLabel">Expected time:</span>
+                        <span class="time-value" data-i18n="comparison.before.time">Days to weeks</span>
                     </div>
                 </div>
 
                 <div class="comparison-arrow">
                     <svg width="60" height="40" viewBox="0 0 60 40">
-                        <path d="M55 20 L15 20 M20 10 L5 20 L20 30" stroke="currentColor" stroke-width="3"
+                        <path d="M5 20 L45 20 M40 10 L55 20 L40 30" stroke="currentColor" stroke-width="3"
                             fill="none" />
                     </svg>
                 </div>
@@ -456,19 +500,25 @@
                 <div class="comparison-card after">
                     <div class="comparison-header">
                         <span class="comparison-icon">🚀</span>
-                        <h3>مع Easy Data</h3>
+                        <h3 data-i18n="comparison.after.title">With Easy Data</h3>
                     </div>
                     <ul class="comparison-list">
-                        <li><span class="check-mark">✓</span> تنظيف تلقائي للبيانات</li>
-                        <li><span class="check-mark">✓</span> لا تحتاج كتابة كود</li>
-                        <li><span class="check-mark">✓</span> اختيار أفضل نموذج تلقائياً</li>
-                        <li><span class="check-mark">✓</span> تقارير جاهزة للتحميل</li>
-                        <li><span class="check-mark">✓</span> واجهة سهلة للجميع</li>
-                        <li><span class="check-mark">✓</span> نتائج سريعة</li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l1">Automatic data
+                                cleaning</span></li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l2">No coding
+                                required</span></li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l3">Best model selected
+                                automatically</span></li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l4">Ready-to-download
+                                reports</span></li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l5">Easy interface for
+                                everyone</span></li>
+                        <li><span class="check-mark">✓</span> <span data-i18n="comparison.after.l6">Fast results</span>
+                        </li>
                     </ul>
                     <div class="comparison-time">
-                        <span class="time-label">الوقت المتوقع:</span>
-                        <span class="time-value highlight">دقائق معدودة</span>
+                        <span class="time-label" data-i18n="comparison.timeLabel">Expected time:</span>
+                        <span class="time-value highlight" data-i18n="comparison.after.time">Just minutes</span>
                     </div>
                 </div>
             </div>
@@ -479,92 +529,97 @@
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">أسئلة شائعة</span>
-                <h2 class="section-title">كل ما تريد <span class="gradient-text">معرفته</span></h2>
-                <p class="section-subtitle">إجابات على الأسئلة الأكثر شيوعاً</p>
+                <span class="section-badge" data-i18n="faq.badge">FAQ</span>
+                <h2 class="section-title"><span data-i18n="faq.titlePart1">Everything You Need to</span> <span
+                        class="gradient-text" data-i18n="faq.titleHighlight">Know</span></h2>
+                <p class="section-subtitle" data-i18n="faq.subtitle">Answers to the most common questions</p>
             </div>
 
             <div class="faq-grid">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>ما هي أنواع الملفات المدعومة؟</span>
+                        <span data-i18n="faq.q1">What file types are supported?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>ندعم ملفات CSV، Excel (xlsx, xls)، JSON، و Parquet. يمكنك أيضاً الاتصال مباشرة بقواعد بيانات
-                            SQL مثل PostgreSQL، MySQL، و SQLite.</p>
+                        <p data-i18n="faq.a1">We support CSV, Excel (xlsx, xls), JSON, and Parquet files. You can also
+                            connect directly to SQL databases like PostgreSQL, MySQL, and SQLite.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>هل أحتاج خبرة في البرمجة؟</span>
+                        <span data-i18n="faq.q2">Do I need programming experience?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>لا، الأداة مصممة لتكون سهلة الاستخدام. فقط ارفع ملفك، اختر العمود الهدف، واضغط "ابدأ
-                            التحليل". لكن إذا كنت مبرمجاً، نوفر أيضاً Jupyter Notebook جاهز للتعديل.</p>
+                        <p data-i18n="faq.a2">No, the tool is designed to be user-friendly. Just upload your file,
+                            select the target column, and click "Start Analysis". But if you're a programmer, we also
+                            provide a ready-to-edit Jupyter Notebook.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>كيف يتم تنظيف البيانات؟</span>
+                        <span data-i18n="faq.q3">How is the data cleaned?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>يقوم النظام بفحص البيانات واكتشاف المشاكل مثل القيم الناقصة، المكررات، والأخطاء. ثم يقترح
-                            إصلاحات ويطبقها تلقائياً بعد موافقتك.</p>
+                        <p data-i18n="faq.a3">The system examines data and detects issues like missing values,
+                            duplicates, and errors. It then suggests fixes and applies them automatically after your
+                            approval.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>هل بياناتي آمنة؟</span>
+                        <span data-i18n="faq.q4">Is my data secure?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>نعم، بياناتك تُعالج محلياً على جهازك ولا تُرسل إلى خوادم خارجية إلا إذا اخترت استخدام ميزات
-                            الذكاء الاصطناعي السحابية (وفي هذه الحالة نستخدم تشفير SSL).</p>
+                        <p data-i18n="faq.a4">Yes, your data is processed locally on your device and is not sent to
+                            external servers unless you choose to use cloud AI features (in which case we use SSL
+                            encryption).</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>ما الفرق بين الخطة المجانية والمدفوعة؟</span>
+                        <span data-i18n="faq.q5">What's the difference between free and paid plans?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>الخطة المجانية تتيح 3 تحليلات شهرياً مع ملفات حتى 1MB. الخطة الاحترافية تزيل هذه القيود وتضيف
-                            تقارير Power BI و API.</p>
+                        <p data-i18n="faq.a5">The free plan allows 3 analyses per month with files up to 1MB. The
+                            professional plan removes these limits and adds Power BI reports and API access.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>هل يدعم اللغة العربية؟</span>
+                        <span data-i18n="faq.q6">Does it support Arabic?</span>
                         <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2">
                             <path d="M6 9l6 6 6-6" />
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>نعم! الواجهة والتقارير متاحة بالعربية والإنجليزية. يمكنك التبديل بينهما في أي وقت.</p>
+                        <p data-i18n="faq.a6">Yes! The interface and reports are available in Arabic and English. You
+                            can switch between them at any time.</p>
                     </div>
                 </div>
             </div>
@@ -576,30 +631,32 @@
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
-                    <span class="section-badge">تواصل معنا</span>
-                    <h2 class="section-title">لديك سؤال؟ <span class="gradient-text">نحن هنا</span></h2>
-                    <p>سواء كان لديك استفسار تقني أو تريد معرفة المزيد عن الخطط المؤسسية، فريقنا جاهز للمساعدة.</p>
+                    <span class="section-badge" data-i18n="contact.badge">Contact Us</span>
+                    <h2 class="section-title"><span data-i18n="contact.titlePart1">Have a Question?</span> <span
+                            class="gradient-text" data-i18n="contact.titleHighlight">We're Here</span></h2>
+                    <p data-i18n="contact.desc">Whether you have a technical question or want to learn more about
+                        enterprise plans, our team is ready to help.</p>
 
                     <div class="contact-methods">
                         <div class="contact-method">
                             <span class="method-icon">📧</span>
                             <div>
-                                <strong>البريد الإلكتروني</strong>
-                                <p>support@easydata.ai</p>
+                                <strong data-i18n="contact.email">Email</strong>
+                                <p>support@geteasydata.com</p>
                             </div>
                         </div>
                         <div class="contact-method">
                             <span class="method-icon">💬</span>
                             <div>
-                                <strong>الدردشة المباشرة</strong>
-                                <p>متاح أيام العمل 9ص - 5م</p>
+                                <strong data-i18n="contact.chat">Live Chat</strong>
+                                <p data-i18n="contact.chatHours">Available weekdays 9am - 5pm</p>
                             </div>
                         </div>
                         <div class="contact-method">
                             <span class="method-icon">📚</span>
                             <div>
-                                <strong>التوثيق</strong>
-                                <p>docs.easydata.ai</p>
+                                <strong data-i18n="contact.docs">Documentation</strong>
+                                <p>docs.geteasydata.com</p>
                             </div>
                         </div>
                     </div>
@@ -608,29 +665,33 @@
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">الاسم</label>
-                            <input type="text" id="name" name="name" placeholder="اسمك الكريم" required>
+                            <label for="name" data-i18n="contact.form.name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name"
+                                data-i18n-placeholder="contact.form.namePlaceholder" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">البريد الإلكتروني</label>
+                            <label for="email" data-i18n="contact.form.email">Email</label>
                             <input type="email" id="email" name="email" placeholder="example@email.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="subject">الموضوع</label>
+                            <label for="subject" data-i18n="contact.form.subject">Subject</label>
                             <select id="subject" name="subject">
-                                <option value="general">استفسار عام</option>
-                                <option value="technical">دعم تقني</option>
-                                <option value="enterprise">خطط المؤسسات</option>
-                                <option value="partnership">شراكة</option>
+                                <option value="general" data-i18n="contact.form.subjectGeneral">General Inquiry</option>
+                                <option value="technical" data-i18n="contact.form.subjectTechnical">Technical Support
+                                </option>
+                                <option value="enterprise" data-i18n="contact.form.subjectEnterprise">Enterprise Plans
+                                </option>
+                                <option value="partnership" data-i18n="contact.form.subjectPartnership">Partnership
+                                </option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">الرسالة</label>
-                            <textarea id="message" name="message" rows="4" placeholder="كيف يمكننا مساعدتك؟"
-                                required></textarea>
+                            <label for="message" data-i18n="contact.form.message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+                                data-i18n-placeholder="contact.form.messagePlaceholder" required></textarea>
                         </div>
                         <button type="submit" class="btn-primary">
-                            <span>إرسال الرسالة</span>
+                            <span data-i18n="contact.form.submit">Send Message</span>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
@@ -646,15 +707,16 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>جاهز لتجربة <span class="gradient-text">Easy Data</span>؟</h2>
-                <p>ابدأ بتحليل بياناتك الآن واكتشف ما يمكن أن يقدمه لك</p>
+                <h2><span data-i18n="cta.titlePart1">Ready to Try</span> <span class="gradient-text">Easy
+                        Data</span><span data-i18n="cta.titlePart2">?</span></h2>
+                <p data-i18n="cta.subtitle">Start analyzing your data now and discover what it can do for you</p>
                 <a href="http://localhost:8501" target="_blank" class="btn-primary btn-large">
-                    <span>ابدأ مجاناً الآن</span>
+                    <span data-i18n="cta.button">Start Free Now</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                 </a>
-                <p class="cta-note">لا تحتاج بطاقة ائتمان • إعداد في دقيقة واحدة</p>
+                <p class="cta-note" data-i18n="cta.note">No credit card required • Setup in one minute</p>
             </div>
         </div>
     </section>
@@ -668,29 +730,29 @@
                         <span class="logo-icon">💎</span>
                         <span class="logo-text">Easy Data</span>
                     </div>
-                    <p>أداة تحليل بيانات مدعومة بالذكاء الاصطناعي.</p>
+                    <p data-i18n="footer.desc">AI-powered data analysis tool.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>المنتج</h4>
-                    <a href="#features">الميزات</a>
-                    <a href="#pricing">الأسعار</a>
-                    <a href="#faq">أسئلة شائعة</a>
-                    <a href="http://localhost:8501" target="_blank">جرب التطبيق</a>
+                    <h4 data-i18n="footer.product">Product</h4>
+                    <a href="#features" data-i18n="nav.features">Features</a>
+                    <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                    <a href="http://localhost:8501" target="_blank" data-i18n="footer.tryApp">Try the App</a>
                 </div>
                 <div class="footer-links">
-                    <h4>الدعم</h4>
-                    <a href="#how-it-works">كيف يعمل</a>
-                    <a href="#contact">تواصل معنا</a>
-                    <a href="#faq">الأسئلة الشائعة</a>
+                    <h4 data-i18n="footer.support">Support</h4>
+                    <a href="#how-it-works" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="#contact" data-i18n="footer.contactUs">Contact Us</a>
+                    <a href="#faq" data-i18n="nav.faq">FAQ</a>
                 </div>
                 <div class="footer-links">
-                    <h4>قانوني</h4>
-                    <a href="#contact">سياسة الخصوصية</a>
-                    <a href="#contact">شروط الاستخدام</a>
+                    <h4 data-i18n="footer.legal">Legal</h4>
+                    <a href="#contact" data-i18n="footer.privacy">Privacy Policy</a>
+                    <a href="#contact" data-i18n="footer.terms">Terms of Use</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 Easy Data. جميع الحقوق محفوظة.</p>
+                <p>© 2024 Easy Data. <span data-i18n="footer.rights">All rights reserved.</span></p>
             </div>
         </div>
     </footer>
