@@ -1584,3 +1584,24 @@ li {
         max-width: 100%;
     }
 }
+
+/* ===================================
+   RTL Support
+   =================================== */
+html[lang="ar"] .step-connector svg,
+html[lang="ar"] .comparison-arrow svg,
+html[lang="ar"] .btn-primary svg,
+html[lang="ar"] .btn-secondary svg,
+html[lang="ar"] .faq-question svg {
+    transform: scaleX(-1);
+}
+
+html[lang="ar"] .nav-links {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+html[lang="ar"] .nav-logo {
+    margin-left: auto;
+    margin-right: 0;
+}
