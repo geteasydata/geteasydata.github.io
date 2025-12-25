@@ -588,32 +588,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-
-            // Show success message (in real implementation, send to backend)
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
+            const formData = new FormData(contactForm);
 
-            const successText = translations[currentLang]['contact.form.success'];
-            submitBtn.innerHTML = `<span>${successText}</span>`;
-            submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-            submitBtn.disabled = true;
+            try {
+                // Send to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
 
-            // Reset after 3 seconds
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-                contactForm.reset();
-            }, 3000);
+                if (response.ok) {
+                    // Show success message
+                    const successText = translations[currentLang]['contact.form.success'] || 'Message Sent!';
+                    submitBtn.innerHTML = `<span>${successText}</span>`;
+                    submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                    submitBtn.disabled = true;
 
-            // Log for debugging (remove in production)
-            console.log('📧 Contact form submitted:', data);
+                    // Reset after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                        contactForm.reset();
+                    }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('Oops! Look like there was a problem. Please try again or email us directly.');
+            }
         });
     }
 
