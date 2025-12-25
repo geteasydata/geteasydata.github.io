@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Easy Data - AI-Powered Data Analysis</title>
+    <meta name="description" content="Simple, transparent pricing for Easy Data - AI-Powered Data Analysis Platform">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .brand {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured {
+            border-color: #6366f1;
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.1), rgba(15, 23, 42, 0.9));
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #e2e8f0;
+        }
+
+        .plan-description {
+            color: #94a3b8;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 5px;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 400;
+        }
+
+        .price-note {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #cbd5e1;
+            border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list .check {
+            color: #10b981;
+            font-size: 1.2rem;
+        }
+
+        .features-list .cross {
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .cta-button.primary {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: rgba(99, 102, 241, 0.1);
+            color: #6366f1;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .guarantee {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 16px;
+        }
+
+        .guarantee .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .guarantee h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+        }
+
+        .guarantee p {
+            color: #94a3b8;
+        }
+
+        .faq-section {
+            margin-top: 80px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+        }
+
+        .faq-item {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #6366f1;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: #94a3b8;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 40px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(99, 102, 241, 0.2);
+            color: #64748b;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: #6366f1;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">💎</div>
+            <div class="brand">Easy Data</div>
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="subtitle">Choose the plan that fits your needs. No hidden fees, cancel anytime.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Free</h3>
+                <p class="plan-description">Perfect for trying out Easy Data</p>
+                <div class="price">$0<span>/month</span></div>
+                <p class="price-note">Free forever</p>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> 3 analyses per day</li>
+                    <li><span class="check">✓</span> Files up to 1MB</li>
+                    <li><span class="check">✓</span> Basic data cleaning</li>
+                    <li><span class="check">✓</span> Excel reports</li>
+                    <li><span class="cross">✗</span> AI insights</li>
+                    <li><span class="cross">✗</span> Advanced ML models</li>
+                    <li><span class="cross">✗</span> PDF & Word reports</li>
+                    <li><span class="cross">✗</span> Priority support</li>
+                </ul>
+                <a href="https://easydata.streamlit.app" class="cta-button secondary">Get Started Free</a>
+            </div>
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
+                <div class="popular-badge">Most Popular</div>
+                <h3 class="plan-name">Pro</h3>
+                <p class="plan-description">For professionals and growing teams</p>
+                <div class="price">$19<span>/month</span></div>
+                <p class="price-note">or $190/year (save 17%)</p>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> <strong>Unlimited</strong> analyses</li>
+                    <li><span class="check">✓</span> Files up to <strong>100MB</strong></li>
+                    <li><span class="check">✓</span> Advanced data cleaning</li>
+                    <li><span class="check">✓</span> <strong>All report formats</strong> (Excel, PDF, Word, Power BI)
+                    </li>
+                    <li><span class="check">✓</span> <strong>AI-powered insights</strong></li>
+                    <li><span class="check">✓</span> Advanced ML (XGBoost, LightGBM, CatBoost)</li>
+                    <li><span class="check">✓</span> Hyperparameter tuning</li>
+                    <li><span class="check">✓</span> Email support</li>
+                </ul>
+                <a href="https://easydata.streamlit.app" class="cta-button primary">Start 14-Day Free Trial</a>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="pricing-card">
+                <h3 class="plan-name">Enterprise</h3>
+                <p class="plan-description">For large organizations with custom needs</p>
+                <div class="price">Custom</div>
+                <p class="price-note">Contact us for pricing</p>
+                <ul class="features-list">
+                    <li><span class="check">✓</span> Everything in Pro</li>
+                    <li><span class="check">✓</span> <strong>Unlimited</strong> file size</li>
+                    <li><span class="check">✓</span> Custom AI model training</li>
+                    <li><span class="check">✓</span> API access</li>
+                    <li><span class="check">✓</span> SSO integration</li>
+                    <li><span class="check">✓</span> Dedicated support</li>
+                    <li><span class="check">✓</span> Custom integrations</li>
+                    <li><span class="check">✓</span> SLA guarantee</li>
+                </ul>
+                <a href="mailto:support@geteasydata.com" class="cta-button secondary">Contact Sales</a>
+            </div>
+        </div>
+
+        <div class="guarantee">
+            <div class="icon">🛡️</div>
+            <h3>14-Day Money-Back Guarantee</h3>
+            <p>Not satisfied? Get a full refund within 14 days, no questions asked. <a href="refund.html">View our
+                    refund policy</a>.</p>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <p class="faq-question">Can I switch plans later?</p>
+                <p class="faq-answer">Yes! You can upgrade or downgrade your plan at any time. Changes take effect
+                    immediately, and we'll prorate any charges.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">What payment methods do you accept?</p>
+                <p class="faq-answer">We accept all major credit/debit cards, PayPal, and local payment methods through
+                    our payment partner Paddle. This includes support for payments from Saudi Arabia, Egypt, and
+                    worldwide.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Is my data secure?</p>
+                <p class="faq-answer">Absolutely. Your data is processed securely and never permanently stored. We use
+                    industry-standard encryption and never share your data with third parties. See our <a
+                        href="privacy.html">Privacy Policy</a> for details.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Can I cancel anytime?</p>
+                <p class="faq-answer">Yes, you can cancel your subscription at any time from your account settings.
+                    You'll continue to have access until the end of your billing period.</p>
+            </div>
+
+            <div class="faq-item">
+                <p class="faq-question">Do you offer discounts for students or non-profits?</p>
+                <p class="faq-answer">Yes! Contact us at support@geteasydata.com for special pricing for educational
+                    institutions and non-profit organizations.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="index.html" class="back-link">
+                ← Back to Home
+            </a>
+        </div>
+
+        <div class="footer">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+            </div>
+            <p>© 2024 Easy Data. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+
+</html>
