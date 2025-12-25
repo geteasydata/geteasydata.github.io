@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://geteasydata.github.io/sitemap.xml
