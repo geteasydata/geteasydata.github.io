@@ -30,6 +30,29 @@
             padding: 40px 20px;
         }
 
+        .beta-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.85;
+            }
+        }
+
         .header {
             text-align: center;
             margin-bottom: 60px;
@@ -292,10 +315,15 @@
 <body>
     <div class="container">
         <div class="header">
+            <div class="beta-banner">
+                🚀 <strong>Beta Launch!</strong> All features are FREE during our beta period. Help us improve with your
+                feedback!
+            </div>
             <div class="logo">💎</div>
             <div class="brand">Easy Data</div>
             <h1>Simple, Transparent Pricing</h1>
-            <p class="subtitle">Choose the plan that fits your needs. No hidden fees, cancel anytime.</p>
+            <p class="subtitle">Choose the plan that fits your needs. <strong style="color: #10b981;">Currently FREE
+                    during Beta!</strong></p>
         </div>
 
         <div class="pricing-grid">
@@ -320,11 +348,11 @@
 
             <!-- Pro Plan -->
             <div class="pricing-card featured">
-                <div class="popular-badge">Most Popular</div>
+                <div class="popular-badge">🎉 FREE During Beta!</div>
                 <h3 class="plan-name">Pro</h3>
                 <p class="plan-description">For professionals and growing teams</p>
-                <div class="price">$19<span>/month</span></div>
-                <p class="price-note">or $190/year (save 17%)</p>
+                <div class="price"><s style="color:#64748b;font-size:1.5rem;">$19</s> $0<span>/month</span></div>
+                <p class="price-note" style="color:#10b981;">✨ Free during beta period!</p>
                 <ul class="features-list">
                     <li><span class="check">✓</span> <strong>Unlimited</strong> analyses</li>
                     <li><span class="check">✓</span> Files up to <strong>100MB</strong></li>
@@ -336,7 +364,7 @@
                     <li><span class="check">✓</span> Hyperparameter tuning</li>
                     <li><span class="check">✓</span> Email support</li>
                 </ul>
-                <a href="https://easydata.streamlit.app" class="cta-button primary">Start 14-Day Free Trial</a>
+                <a href="https://easydata.streamlit.app" class="cta-button primary">Try Pro Free Now 🚀</a>
             </div>
 
             <!-- Enterprise Plan -->
